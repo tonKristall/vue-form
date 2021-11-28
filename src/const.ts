@@ -1,0 +1,67 @@
+const REGEX_FIELD = {
+  nameRegex: /$/,
+  surnameRegex: /$/,
+  emailRegex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  phoneRegex: /^[0-9()+-.]+/,
+  dateRegex: /(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012]).\d{4}$/,
+};
+
+const USER_FIELD = [
+  {
+    nameItem: 'Имя',
+    value: '',
+    key: 'name',
+    type: 'text',
+    maxLength: '30',
+    inputError: false,
+    messageError: '',
+    formError: true,
+    regexField: REGEX_FIELD.nameRegex,
+  },
+  {
+    nameItem: 'Фамилия',
+    value: '',
+    key: 'surname',
+    type: 'text',
+    maxLength: '30',
+    inputError: false,
+    messageError: '',
+    formError: true,
+    regexField: REGEX_FIELD.surnameRegex,
+  },
+  {
+    nameItem: 'Адрес электронной почты',
+    value: '',
+    key: 'email',
+    type: 'email',
+    maxLength: '30',
+    inputError: false,
+    messageError: '',
+    formError: true,
+    regexField: REGEX_FIELD.emailRegex,
+  },
+  {
+    nameItem: 'Телефон',
+    value: '',
+    key: 'phone',
+    type: 'text',
+    maxLength: '30',
+    inputError: false,
+    messageError: '',
+    formError: true,
+    regexField: REGEX_FIELD.phoneRegex,
+  },
+  {
+    nameItem: 'Дата рождения',
+    value: '',
+    key: 'birthday',
+    type: 'text',
+    maxLength: '10',
+    inputError: false,
+    messageError: '',
+    formError: true,
+    regexField: REGEX_FIELD.dateRegex,
+  },
+];
+
+export default USER_FIELD;
