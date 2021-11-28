@@ -2,6 +2,7 @@
   <div class="card-user">
     <div class="card-user__wrapper">
       <form id="user-form" class="card-user__form" novalidate="true" @submit="submitFormHandler">
+        <Avatar v-bind:submitForm="submitForm" />
         <label
           class="text-field"
           v-for="userFieldItem in userFieldsItems"
@@ -43,6 +44,7 @@ import Vue from 'vue';
 import USER_FIELDS from '@/const';
 import { IUserField } from '@/types';
 import SubmitModal from '@/components/SubmitModal.vue';
+import Avatar from '@/components/Avatar.vue';
 
 export default Vue.extend({
   data(): Record<string, unknown> {
@@ -56,6 +58,7 @@ export default Vue.extend({
   },
   components: {
     SubmitModal,
+    Avatar,
   },
   methods: {
     checkField(value: string, userFieldItem: IUserField): boolean {
@@ -91,7 +94,7 @@ export default Vue.extend({
           }
           return '';
         case 'phone':
-          editValue = value.match(/[-().\d]+/);
+          editValue = value.match(/[-().\d ]+/);
           if (editValue) {
             return editValue[0];
           }
